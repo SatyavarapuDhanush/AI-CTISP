@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CTI Sharing Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">🚨 Cyber Threat Intelligence Submission</h2>
+    <form method="post" action="/submit-form">
+        <div class="mb-3">
+            <label for="ioc_desc" class="form-label">Describe Threat</label>
+            <textarea class="form-control" id="ioc_desc" name="ioc_desc" rows="3" placeholder="e.g. suspicious login from 45.33.32.156..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger w-100">Submit Threat Report</button>
+    </form>
+
+    {% if result %}
+    <div class="alert alert-success mt-4">
+        <h5>✅ Threat Validated</h5>
+        <p><strong>SHA-256 Hash:</strong> {{ result.hash }}</p>
+        <p><strong>Mapped Technique:</strong> {{ result.technique }}</p>
+        <p><strong>Description:</strong> {{ result.description }}</p>
+        <p><strong>Model Confidence:</strong> {{ result.confidence }}%</p>
+    </div>
+    {% elif status %}
+    <div class="alert alert-warning mt-4">
+        <h5>⚠️ {{ status }}</h5>
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

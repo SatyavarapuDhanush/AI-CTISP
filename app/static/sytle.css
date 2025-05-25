@@ -1,0 +1,23 @@
+body {
+    background-color: #f4f6f8;
+    font-family: "Segoe UI", sans-serif;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.card {
+    border: none;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+h3, h5 {
+    color: #333;
+}
+
+textarea.form-control {
+    resize: none;
+}

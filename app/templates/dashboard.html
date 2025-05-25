@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - CTI Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container mt-4">
+    <h3 class="mb-3">📊 Admin Dashboard - Threat Intelligence</h3>
+    <a href="/" class="btn btn-primary mb-3">← Submit New Threat</a>
+    <div class="row text-center">
+        <div class="col-md-4">
+            <div class="card p-3 mb-4">
+                <h5>Total Threats</h5>
+                <p class="display-6">{{ stats.total }}</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 mb-4">
+                <h5>Most Recent Hash</h5>
+                <p class="small text-break">{{ stats.latest_hash }}</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card p-3 mb-4">
+                <h5>Latest Description</h5>
+                <p>{{ stats.latest_desc }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

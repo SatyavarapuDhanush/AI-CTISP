@@ -1,0 +1,1 @@
+def simulate_honeypot_attack(): return {"source_ip": "10.0.0.45", "type": "Brute Force"}

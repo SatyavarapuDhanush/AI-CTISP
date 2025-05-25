@@ -1,0 +1,1 @@
+def map_to_mitre(threat): return {"technique": "T1110", "description": f"Mapped threat {threat['type']} from {threat['source_ip']}"}

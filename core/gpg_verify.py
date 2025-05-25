@@ -1,0 +1,1 @@
+def receive_report(): return {"ioc": "malicious.com", "signed": True}
